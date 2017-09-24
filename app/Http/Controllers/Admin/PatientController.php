@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Patient;
+use App\Patient;
 
 class PatientController extends Controller
 {
@@ -53,6 +53,13 @@ class PatientController extends Controller
         ]);
     }
 
+    public function edit($id)
+    {
+        $patient = Patient::find($id);
+
+        return view('admin.patient.edit', compact('patient'));
+    }
+
     public function update(Request $request, $id)
     {
         $messages = [
@@ -72,14 +79,14 @@ class PatientController extends Controller
 
         $patient = Patient::find($id);
 
-        $patient->name => $request->name;
-        $patient->cpf => $request->cpf;
-        $patient->rg => $request->rg;
-        $patient->registration => $request->registration;
-        $patient->phone => $request->phone;
-        $patient->address => $request->address;
-        $patient->sex => $request->sex;
-        $patient->birth => $request->birth;
+        $patient->name = $request->name;
+        $patient->cpf = $request->cpf;
+        $patient->rg = $request->rg;
+        $patient->registration = $request->registration;
+        $patient->phone = $request->phone;
+        $patient->address = $request->address;
+        $patient->sex = $request->sex;
+        $patient->birth = $request->birth;
 
         $patient->save();
 

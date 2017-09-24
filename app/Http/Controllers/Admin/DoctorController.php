@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Doctor;
+use App\Doctor;
 
 class DoctorController extends Controller
 {
@@ -48,6 +48,13 @@ class DoctorController extends Controller
             'status_type' => 'success',
             'status' => 'Médico cadastrado com sucesso!',
         ]);
+    }
+
+    public function edit($id)
+    {
+        $doctor = Doctor::find($id);
+
+        return view('admin.doctor.edit', compact('doctor'));
     }
 
     public function update(Request $request, $id)

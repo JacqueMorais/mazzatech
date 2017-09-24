@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Scheduling;
+use App\Scheduling;
 
 class SchedulingController extends Controller
 {
@@ -16,7 +16,10 @@ class SchedulingController extends Controller
 
     public function create()
     {
-        return view('admin.scheduling.create');
+        $doctors =  \App\Doctor::all();
+        $patients = \App\Patient::all();
+
+        return view('admin.scheduling.create', compact('doctors', 'patients'));
     }
 
     public function store(Request $request)
@@ -30,12 +33,14 @@ class SchedulingController extends Controller
             'horary' => 'Horário',
         ];
 
-        $this->validate($request, [
+       /* $this->validate($request, [
             'date' => 'required|date',
             'horary' => 'required',
-        ], $messages, $correct_names);
+        ], $messages, $correct_names);*/
 
         $scheduling = Scheduling::create([
+            'id_doctor' => $request->id_doctor,
+            'id_patient' => $request->id_patient,
             'date' => $request->date,
             'horary' => $request->horary,
             'specialty' => $request->specialty
@@ -45,6 +50,16 @@ class SchedulingController extends Controller
             'status_type' => 'success',
             'status' => 'Consulta cadastrada com sucesso!',
         ]);
+    }
+
+    public function edit($id)
+    {
+        $doctors =  \App\Doctor::all();
+        $patients = \App\Patient::all(); 
+
+        $scheduling = Scheduling::find($id);
+
+        return view('admin.scheduling.edit', compact('scheduling', 'doctors', 'patients'));
     }
 
     public function update(Request $request, $id)
@@ -65,9 +80,9 @@ class SchedulingController extends Controller
 
         $scheduling = Scheduling::find($id);
 
-        $scheduling->date => $request->date;
-        $scheduling->horary => $request->horary;
-        $scheduling->specialty => $request->specialty;
+        $scheduling->date = $request->date;
+        $scheduling->horary = $request->horary;
+        $scheduling->specialty = $request->specialty;
 
         $scheduling->save();
 
