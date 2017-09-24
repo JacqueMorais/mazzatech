@@ -30,9 +30,13 @@
 						</thead>
 						<tbody>
 						  	@foreach($schedulings as $scheduling) 
+						  		@php 
+						  			$doctor = \App\Doctor::find($scheduling->id_doctor); 
+						  			$patient = \App\Patient::find($scheduling->id_patient); 
+						  		@endphp
 								<tr>
-									<td>{{ $scheduling->id_doctor }}</td>
-									<td>{{ $scheduling->id_patient }}</td>
+									<td>{{ $doctor->name }}</td>
+									<td>{{ $patient->name }}</td>
 									<td>{{ $scheduling->date }}</td>
 									<td>{{ $scheduling->horary }}</td>
 									<td>{{ $scheduling->specialty }}</td>

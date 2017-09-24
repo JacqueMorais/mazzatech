@@ -102,7 +102,7 @@ class DoctorController extends Controller
         $doctor = Doctor::find($id);
 
         $doctor->deleted_reason = $request->reason;
-        $doctor->deleted_user = \Auth::user()->id;
+        //$doctor->deleted_user = \Auth::user()->id;
         $doctor->save();
 
         if ($doctor->delete()) {

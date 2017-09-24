@@ -23,6 +23,8 @@
 								<th>Nome</th>
 								<th>CRM</th>
 								<th>Especialidade</th>
+								<th>Edereço</th>
+								<th>Telefone</th>
 								<th>Opções</th>
 							</tr>
 						</thead>
@@ -32,6 +34,8 @@
 									<td>{{ $doctor->name }}</td>
 									<td>{{ $doctor->crm }}</td>
 									<td>{{ $doctor->specialty }}</td>
+									<td>{{ $doctor->address }}</td>
+									<td>{{ $doctor->phone }}</td>
 									<td style="width:200px">
 										<a href="{{ route('admin.doctor.edit', $doctor->id) }}">
 											<i class="fa fa-edit fa-fw"></i>Editar

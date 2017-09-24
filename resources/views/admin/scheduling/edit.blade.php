@@ -34,12 +34,16 @@
                                 </select>
                             </div>
                             <div class="col-sm-4">
+                                <label for="specialty">Especialidade:</label>
+                                <input type="text" name="specialty" class="form-control" value="{{ $scheduling->specialty }}">
+                            </div>
+                            <div class="col-sm-4">
                                 <label for="date">Data:</label>
-                                <input type="text" name="date" class="form-control maskdate" value="{{ $patient->date }}">
+                                <input type="text" name="date" class="form-control maskdate" value="{{ $scheduling->date }}">
                             </div>
                             <div class="col-sm-2">
-                                <label for="time">Hora:</label>
-                                <input type="text" name="time" class="form-control masktime" value="{{ $patient->horary }}">
+                                <label for="horary">Hora:</label>
+                                <input type="text" name="horary" class="form-control masktime" value="{{ $scheduling->horary }}">
                             </div>
                         </div>                  
                     </div>

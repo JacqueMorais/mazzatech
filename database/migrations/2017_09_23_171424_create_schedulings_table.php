@@ -19,7 +19,7 @@ class CreateSchedulingsTable extends Migration
             $table->integer('id_doctor')->nullable();
             $table->string('specialty', 255)->nullable();
             $table->date('date')->nullable(); 
-            $table->dateTime('horary')->nullable(); 
+            $table->time('horary')->nullable(); 
             $table->timestamps();
             $table->softDeletes();
             $table->integer('deleted_user')->nullable();

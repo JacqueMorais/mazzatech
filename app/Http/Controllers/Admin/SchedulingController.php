@@ -29,14 +29,18 @@ class SchedulingController extends Controller
             'max' => "Campo ':attribute' permiti um número máximo de :max caracteres.",
         ];
         $correct_names = [
+            'id_doctor' => 'Médico',
+            'id_patient' => 'Paciente',
             'date' => 'Data',
             'horary' => 'Horário',
         ];
 
-       /* $this->validate($request, [
-            'date' => 'required|date',
+        $this->validate($request, [
+            'id_doctor' => 'required',
+            'id_patient' => 'required',
+            'date' => 'required',
             'horary' => 'required',
-        ], $messages, $correct_names);*/
+        ], $messages, $correct_names);
 
         $scheduling = Scheduling::create([
             'id_doctor' => $request->id_doctor,
@@ -68,18 +72,24 @@ class SchedulingController extends Controller
             'required' => "Campo ':attribute' é obrigatório.",
             'max' => "Campo ':attribute' permiti um numero máximo de :max caracteres.",
         ];
-        $correct_names = [
+         $correct_names = [
+            'id_doctor' => 'Médico',
+            'id_patient' => 'Paciente',
             'date' => 'Data',
             'horary' => 'Horário',
         ];
 
-        $this->validate($request, [
-            'date' => 'required|date',
+         $this->validate($request, [
+            'id_doctor' => 'required',
+            'id_patient' => 'required',
+            'date' => 'required',
             'horary' => 'required',
         ], $messages, $correct_names);
 
         $scheduling = Scheduling::find($id);
 
+        $scheduling->id_doctor = $request->id_doctor;
+        $scheduling->id_patient = $request->id_patient;
         $scheduling->date = $request->date;
         $scheduling->horary = $request->horary;
         $scheduling->specialty = $request->specialty;
@@ -104,7 +114,7 @@ class SchedulingController extends Controller
         $scheduling = Scheduling::find($id);
 
         $scheduling->deleted_reason = $request->reason;
-        $scheduling->deleted_user = \Auth::user()->id;
+        //$scheduling->deleted_user = \Auth::user()->id;
         $scheduling->save();
 
         if ($scheduling->delete()) {

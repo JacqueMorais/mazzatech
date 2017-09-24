@@ -52,8 +52,8 @@
                             </div>
                             <div class="col-sm-4">
                                 <label for="sexo">Sexo:</label>
-                                <input type="radio" name="sex" value="1"> Masculino
-                                <input type="radio" name="sex" value="2"> Feminino
+                                <input type="radio" name="sex" value="1" {{ $patient->sex == 1 ? 'checked' : ''}}> Masculino
+                                <input type="radio" name="sex" value="2" {{ $patient->sex == 2 ? 'checked' : ''}}> Feminino
                             </div>
                         </div>              
                     </div>

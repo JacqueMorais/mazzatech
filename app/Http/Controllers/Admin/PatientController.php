@@ -108,7 +108,7 @@ class PatientController extends Controller
         $patient = Patient::find($id);
 
         $patient->deleted_reason = $request->reason;
-        $patient->deleted_user = \Auth::user()->id;
+        //$patient->deleted_user = \Auth::user()->id;
         $patient->save();
 
         if ($patient->delete()) {

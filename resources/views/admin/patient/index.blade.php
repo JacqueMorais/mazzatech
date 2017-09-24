@@ -26,6 +26,7 @@
 								<th>Número do convênio</th>
 								<th>Telefone</th>
 								<th>Endereço</th>
+								<th>Data de nascimento</th>
 								<th>Opções</th>
 							</tr>
 						</thead>
@@ -38,6 +39,7 @@
 									<td>{{ $patient->registration }}</td>
 									<td>{{ $patient->phone }}</td>
 									<td>{{ $patient->address }}</td>
+									<td>{{ $patient->birth }}</td>
 								
 									<td style="width:200px">
 										<a href="{{ route('admin.patient.edit', $patient->id) }}">

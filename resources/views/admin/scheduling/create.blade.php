@@ -33,12 +33,16 @@
 						    	</select>
 					    	</div>
 					    	<div class="col-sm-4">
+					    		<label for="specialty">Especialidade:</label>
+					    		<input type="text" name="specialty" class="form-control" placeholder="Digite aqui" value="{{ old('specialty') }}">
+					    	</div>
+					    	<div class="col-sm-4">
 					    		<label for="date">Data:</label>
 					    		<input type="text" name="date" class="form-control maskdate" placeholder="Digite aqui" value="{{ old('date') }}">
 					    	</div>
 					    	<div class="col-sm-2">
-					    		<label for="time">Hora:</label>
-					    		<input type="text" name="time" class="form-control masktime" placeholder="00:00:00">
+					    		<label for="horary">Hora:</label>
+					    		<input type="text" name="horary" class="form-control masktime" placeholder="00:00:00">
 						    </div>
 					  	</div>					
 					</div>

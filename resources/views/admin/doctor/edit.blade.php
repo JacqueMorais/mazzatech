@@ -36,7 +36,7 @@
                         <div class="form-group">
                             <div class="col-sm-4">
                                 <label for="address">Endereço:</label>
-                                <input type="text" name="address" class="form-control" value="{{$doctor->address }}">
+                                <input type="text" name="address" class="form-control" value="{{ $doctor->address }}">
                             </div>
                             <div class="col-sm-4">
                                 <label for="phone">Telefone:</label>
