@@ -45,7 +45,7 @@ class SchedulingController extends Controller
         $scheduling = Scheduling::create([
             'id_doctor' => $request->id_doctor,
             'id_patient' => $request->id_patient,
-            'date' => $request->date,
+            'date' => \helpers::dateBrToEn($request->date),
             'horary' => $request->horary,
             'specialty' => $request->specialty
         ]);
@@ -90,7 +90,7 @@ class SchedulingController extends Controller
 
         $scheduling->id_doctor = $request->id_doctor;
         $scheduling->id_patient = $request->id_patient;
-        $scheduling->date = $request->date;
+        $scheduling->date = \helpers::dateBrToEn($request->date);
         $scheduling->horary = $request->horary;
         $scheduling->specialty = $request->specialty;
 

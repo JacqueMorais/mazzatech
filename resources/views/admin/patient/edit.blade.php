@@ -48,7 +48,7 @@
                             </div>
                             <div class="col-sm-4">
                                 <label for="birth">Data de Nascimento:</label>
-                                <input type="text" name="birth" class="txt required full-width form-control txt maskbirth" value="{{ $patient->birth }}" required>
+                                <input type="text" name="birth" class="txt required full-width form-control txt maskbirth" value="{{ \helpers::date_format($patient->birth, 'data') }}" required>
                             </div>
                             <div class="col-sm-4">
                                 <label for="sexo">Sexo:</label>

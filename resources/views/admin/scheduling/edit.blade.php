@@ -39,7 +39,7 @@
                             </div>
                             <div class="col-sm-4">
                                 <label for="date">Data:</label>
-                                <input type="text" name="date" class="form-control maskdate" value="{{ $scheduling->date }}">
+                                <input type="text" name="date" class="form-control maskdate" value="{{ \helpers::date_format($scheduling->date, 'data') }}">
                             </div>
                             <div class="col-sm-2">
                                 <label for="horary">Hora:</label>

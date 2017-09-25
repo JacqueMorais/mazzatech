@@ -44,7 +44,7 @@ class PatientController extends Controller
             'phone' => $request->phone,
             'address' => $request->address,
             'sex' => $request->sex,
-            'birth' => $request->birth
+            'birth' => \helpers::dateBrToEn($request->birth)
         ]);
 
         return redirect()->route('admin.patient.index')->with([
@@ -86,7 +86,7 @@ class PatientController extends Controller
         $patient->phone = $request->phone;
         $patient->address = $request->address;
         $patient->sex = $request->sex;
-        $patient->birth = $request->birth;
+        $patient->birth = \helpers::dateBrToEn($request->birth);
 
         $patient->save();
 

@@ -4,8 +4,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/', ['as' => 'index', 'uses' => 'SiteController@index']);
+Route::get('medicos', ['as' => 'doctors', 'uses' => 'SiteController@doctors']);
+Route::get('pacientes', ['as' => 'patients', 'uses' => 'SiteController@patients']);
 
-Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin'], function()
+Route::group(['as' => 'auth.', 'prefix' => 'auth'], function(){
+  Route::get('', ['as' => 'index', 'uses' => 'AuthController@index']);
+  Route::post('login', ['as' => 'login', 'uses' => 'AuthController@login']);
+  Route::get('logout', ['as' => 'logout', 'uses' => 'AuthController@logout']);
+});
+
+Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth'], function()
 {
   Route::get('', ['as' => 'home', 'uses' => 'HomeController@index']);      
   

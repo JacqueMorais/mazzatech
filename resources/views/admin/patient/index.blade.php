@@ -39,7 +39,7 @@
 									<td>{{ $patient->registration }}</td>
 									<td>{{ $patient->phone }}</td>
 									<td>{{ $patient->address }}</td>
-									<td>{{ $patient->birth }}</td>
+									<td>{{ \helpers::date_format($patient->birth, 'data') }}</td>
 								
 									<td style="width:200px">
 										<a href="{{ route('admin.patient.edit', $patient->id) }}">

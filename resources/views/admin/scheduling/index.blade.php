@@ -37,7 +37,7 @@
 								<tr>
 									<td>{{ $doctor->name }}</td>
 									<td>{{ $patient->name }}</td>
-									<td>{{ $scheduling->date }}</td>
+									<td>{{ \helpers::date_format($scheduling->date, 'data') }}</td>
 									<td>{{ $scheduling->horary }}</td>
 									<td>{{ $scheduling->specialty }}</td>
 									<td style="width:200px">
