@@ -1,3 +1,12 @@
+@extends('layouts.menu')
+
+@section('content')
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Pacientes</h1>
+    </div>
+</div>
+
 <div class="col-sm-12">
 	@if(!$patients->isEmpty()) 
 		<table class="table">
@@ -30,3 +39,4 @@
 		
 	@endif
 </div>
+@stop

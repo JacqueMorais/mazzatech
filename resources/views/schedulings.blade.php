@@ -1,7 +1,6 @@
-<a class="btn btn-primary" href="{{ route('doctors') }}">Médicos</a>
-<a class="btn btn-primary" href="{{ route('patients') }}">Pacientes</a>
+@extends('layouts.menu')
 
-
+@section('content')
 <div class="row">
     <div class="col-lg-12">
         <h1 class="page-header">Agendamentos</h1>
@@ -41,3 +40,4 @@
 		
 	@endif
 </div>
+@stop

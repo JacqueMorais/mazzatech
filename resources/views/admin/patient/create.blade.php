@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
@@ -22,15 +25,15 @@
 					    	</div>
 					    	<div class="col-sm-3">
 					    		<label for="rg">RG:</label>
-					    		<input type="text" name="rg" class="form-control" placeholder="Digite aqui" value="{{ old('rg') }}" required>
+					    		<input type="text" name="rg" class="form-control" placeholder="Digite aqui" value="{{ old('rg') }}">
 					    	</div>
 					    	<div class="col-sm-3">
 					    		<label for="cpf">CPF:</label>
-					    		<input type="text" name="cpf" class="form-control" placeholder="Digite aqui" value="{{ old('cpf') }}">
+					    		<input type="text" name="cpf" class="form-control" placeholder="Digite aqui" value="{{ old('cpf') }}" required>
 					    	</div>
 					    	<div class="col-sm-3">
 					    		<label for="registration">Número do convênio:</label>
-					    		<input type="text" name="registration" class="form-control" placeholder="Digite aqui" value="{{ old('registration') }}">
+					    		<input type="text" name="registration" class="form-control" placeholder="Digite aqui" value="{{ old('registration') }}" required>
 					    	</div>
 					  	</div>					
 					</div>
@@ -47,7 +50,7 @@
 					    	</div>
 					    	<div class="col-sm-4">
 								<label for="birth">Data de Nascimento:</label>
-						    	<input type="text" name="birth" class="txt required full-width form-control txt maskbirth" placeholder="Digite a data" value="{{ old('birth') }}" required>
+						    	<input type="text" name="birth" class="txt required full-width form-control txt maskbirth" placeholder="Digite a data" value="{{ old('birth') }}">
 						    </div>
 						    <div class="col-sm-4">
 								<label for="sexo">Sexo:</label>
@@ -67,3 +70,4 @@
 		</div>
 	</div>
 </div>
+@stop

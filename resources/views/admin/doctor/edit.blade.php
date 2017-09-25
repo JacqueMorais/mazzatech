@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
@@ -27,7 +30,7 @@
                             </div>
                             <div class="col-sm-4">
                                 <label for="specialty">Especialidade:</label>
-                                <input type="text" name="specialty" class="form-control" value="{{ $doctor->specialty }}">
+                                <input type="text" name="specialty" class="form-control" value="{{ $doctor->specialty }}" required>
                             </div>
                         </div>                  
                     </div>
@@ -55,3 +58,4 @@
         </div>
     </div>
 </div>
+@stop
