@@ -1,6 +1,7 @@
 @extends('layouts.menu')
 
 @section('content')
+
 <div class="row">
     <div class="col-lg-12">
         <h1 class="page-header">Médicos</h1>
@@ -9,7 +10,7 @@
 
 <div class="col-sm-12">
 		@if(!$doctors->isEmpty()) 
-			<table class="table">
+			<table class="table" id="doctors">
 				<thead>
 					<tr>
 						<th>Nome</th>
@@ -36,4 +37,20 @@
 		@endif
     </div>
 </div>
+@stop
+
+@section('scripts')
+<script type="text/javascript">
+	$(document).ready(function() {
+	    $('#doctors').DataTable( {
+	        "language": {
+	            "lengthMenu": "Mostrando _MENU_ registro por página",
+	            "zeroRecords": "Nada encontrado",
+	            "info": "Mostrando página _PAGE_ de _PAGES_",
+	            "infoEmpty": "Nenhum registro disponível",
+	            "infoFiltered": "(filtrado de _MAX_ registro no total)"
+	        }
+	    } );
+	} );
+</script>
 @stop

@@ -9,7 +9,7 @@
 
 <div class="col-sm-12">
 	@if(!$patients->isEmpty()) 
-		<table class="table">
+		<table class="table" id="patients">
 			<thead>
 				<tr>
 					<th>Nome</th>
@@ -39,4 +39,20 @@
 		
 	@endif
 </div>
+@stop
+
+@section('scripts')
+<script type="text/javascript">
+	$(document).ready(function() {
+	    $('#patients').DataTable( {
+	        "language": {
+	            "lengthMenu": "Mostrando _MENU_ registro por página",
+	            "zeroRecords": "Nada encontrado",
+	            "info": "Mostrando página _PAGE_ de _PAGES_",
+	            "infoEmpty": "Nenhum registro disponível",
+	            "infoFiltered": "(filtrado de _MAX_ registro no total)"
+	        }
+	    } );
+	} );
+</script>
 @stop
