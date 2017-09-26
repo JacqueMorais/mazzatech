@@ -21,7 +21,7 @@
                     <div class="row">
                         <div class="form-group">
                             <div class="col-sm-3">
-                                <label for="name">Médico:</label>
+                                <label for="name">Médico* :</label>
                                 <select name="id_doctor" class="form-control">
                                     @foreach($doctors as $doctor) 
                                         <option value="{{$doctor->id}}">{{ $doctor->name }}</option>
@@ -29,7 +29,7 @@
                                 </select>
                             </div>
                             <div class="col-sm-3">
-                                <label for="rg">Paciente:</label>
+                                <label for="rg">Paciente* :</label>
                                 <select name="id_patient" class="form-control">
                                     @foreach($patients as $patient) 
                                         <option value="{{$patient->id}}">{{ $patient->name }}</option>
@@ -37,18 +37,26 @@
                                 </select>
                             </div>
                             <div class="col-sm-4">
-                                <label for="specialty">Especialidade:</label>
+                                <label for="specialty">Especialidade :</label>
                                 <input type="text" name="specialty" class="form-control" value="{{ $scheduling->specialty }}">
                             </div>
                             <div class="col-sm-4">
-                                <label for="date">Data:</label>
+                                <label for="date">Data* :</label>
                                 <input type="text" name="date" class="form-control maskdate" value="{{ \helpers::date_format($scheduling->date, 'data') }}" required>
                             </div>
                             <div class="col-sm-2">
-                                <label for="horary">Hora:</label>
+                                <label for="horary">Hora* :</label>
                                 <input type="text" name="horary" class="form-control masktime" value="{{ $scheduling->horary }}" required>
                             </div>
                         </div>                  
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <label for="address">* Campos Obrigatórios.</label>
+                            </div>
+                        </div>
                     </div>
                     
                     <div class="form-group">

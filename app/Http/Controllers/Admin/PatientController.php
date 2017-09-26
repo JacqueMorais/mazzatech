@@ -107,6 +107,10 @@ class PatientController extends Controller
     {
         $patient = Patient::find($id);
 
+        if($patient->schedulings){
+            return redirect()->route('admin.patient.index')->with('status', 'Esse paciente possui agendamentos por isso não pode ser removido.');
+        }
+
         $patient->deleted_reason = $request->reason;
         $patient->deleted_user = \Auth::user()->id;
         $patient->save();

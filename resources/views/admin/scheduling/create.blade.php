@@ -20,7 +20,7 @@
 					<div class="row">
 						<div class="form-group">
 							<div class="col-sm-3">
-					    		<label for="name">Médico:</label>
+					    		<label for="name">Médico* :</label>
 								<select name="id_doctor" class="form-control">
 						    		@foreach($doctors as $doctor) 
 										<option value="{{$doctor->id}}">{{ $doctor->name }}</option>
@@ -28,7 +28,7 @@
 						    	</select>
 					    	</div>
 					    	<div class="col-sm-3">
-					    		<label for="rg">Paciente:</label>
+					    		<label for="rg">Paciente* :</label>
 					    		<select name="id_patient" class="form-control">
 						    		@foreach($patients as $patient) 
 										<option value="{{$patient->id}}">{{ $patient->name }}</option>
@@ -40,14 +40,22 @@
 					    		<input type="text" name="specialty" class="form-control" placeholder="Digite aqui" value="{{ old('specialty') }}">
 					    	</div>
 					    	<div class="col-sm-4">
-					    		<label for="date">Data:</label>
+					    		<label for="date">Data* :</label>
 					    		<input type="text" name="date" class="form-control maskdate" placeholder="Digite aqui" value="{{ old('date') }}" required>
 					    	</div>
 					    	<div class="col-sm-2">
-					    		<label for="horary">Hora:</label>
+					    		<label for="horary">Hora* :</label>
 					    		<input type="text" name="horary" class="form-control masktime" placeholder="00:00:00" required>
 						    </div>
 					  	</div>					
+					</div>
+
+					<div class="row">
+						<div class="form-group">
+							<div class="col-sm-12">
+					    		<label for="address">* Campos Obrigatórios.</label>
+					    	</div>
+					    </div>
 					</div>
 				    				    
 					<div class="form-group">

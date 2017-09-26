@@ -101,6 +101,10 @@ class DoctorController extends Controller
     {
         $doctor = Doctor::find($id);
 
+        if($doctor->schedulings){
+            return redirect()->route('admin.doctor.index')->with('status', 'Esse médico possui agendamentos por isso não pode ser removido.');
+        }
+
         $doctor->deleted_reason = $request->reason;
         $doctor->deleted_user = \Auth::user()->id;
         $doctor->save();
