@@ -13,6 +13,7 @@
     <!-- Styles -->
     <link rel="icon" href="img/favicon.png" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
 </head>
 <body>
@@ -76,11 +77,13 @@
         </nav>
     </div>
 
-    <div class="container">
-        @yield('content')
+    <div class="containner">
+        <div class="geral">
+            @yield('content')
+        </div>
     </div>
-    <div class="container">
-        @extends('layouts.footer')
+    <div class="footer">
+        <p>Teste Full Stack - Mazzatech by <b>Jacqueline Morais<b></p>
     </div>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>

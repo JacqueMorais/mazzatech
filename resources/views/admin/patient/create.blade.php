@@ -2,15 +2,18 @@
 
 @section('content')
 <div id="page-wrapper">
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">Novo Paciente</h1>
-        </div>
-    </div>
-    <div class="row">
-    	<div class="col-lg-12">
-    	</div>
-    </div>
+	<div class="container">
+	    <div class="row">
+	        <div class="col-lg-12">
+	            <h1 class="page-header">Novo Paciente</h1>
+	        </div>
+	    </div>
+	    <div class="row">
+	    	<div class="col-lg-12">
+	    		@include('layouts.form-errors')
+	    	</div>
+	    </div>
+	</div>
     <div class="row">  
 		<div class="container">
 			<div class="col-sm-12">
