@@ -8,7 +8,9 @@ class SiteController extends Controller
 {
     public function index()
     {
-        return view('home');
+       $schedulings = \App\Scheduling::all();
+
+       return view('schedulings', compact('schedulings'));
     }
 
     public function doctors()

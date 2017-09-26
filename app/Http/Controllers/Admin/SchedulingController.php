@@ -114,7 +114,7 @@ class SchedulingController extends Controller
         $scheduling = Scheduling::find($id);
 
         $scheduling->deleted_reason = $request->reason;
-        //$scheduling->deleted_user = \Auth::user()->id;
+        $scheduling->deleted_user = \Auth::user()->id;
         $scheduling->save();
 
         if ($scheduling->delete()) {

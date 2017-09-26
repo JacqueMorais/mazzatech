@@ -3,7 +3,6 @@
 Route::get('/', ['as' => 'index', 'uses' => 'SiteController@index']);
 Route::get('medicos', ['as' => 'doctors', 'uses' => 'SiteController@doctors']);
 Route::get('pacientes', ['as' => 'patients', 'uses' => 'SiteController@patients']);
-Route::get('agendamentos', ['as' => 'schedulings', 'uses' => 'SiteController@schedulings']);
 
 
 Auth::routes();

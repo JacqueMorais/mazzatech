@@ -2,14 +2,18 @@
 
 @section('content')
 <div id="page-wrapper">
-    <div class="row">
-    	<div class="col-lg-12">
-			<h1 class="page-header">Agendamentos</h1>
+	<div class="row">
+    	<div class="col-lg-2 col-md-offset-3">
+				<img src="{{ asset('/img/admin-mazzatech.png')}}" class="img-responsive" width="150">
+		</div>
+    	<div class="col-lg-6">
+			<h2>Admin Mazzatech</h2>
 		</div>
     </div>
     <div class="row">
     	<div class="col-lg-12">
-    	</div>
+			<h1 class="page-header">Agendamentos</h1>
+		</div>
     </div>
     <div class="row">  
     	<div class="container">

@@ -2,11 +2,15 @@
 
 @section('content')
 <div class="row">
-    <div class="col-lg-12">
+	<div class="col-lg-1">
+		<img src="{{ asset('/img/patient-mazzatech.png')}}" class="img-responsive .img-circle">
+	</div>
+    <div class="col-lg-11">
         <h1 class="page-header">Pacientes</h1>
     </div>
 </div>
 
+<div class="row">
 <div class="col-sm-12">
 	@if(!$patients->isEmpty()) 
 		<table class="table" id="patients">

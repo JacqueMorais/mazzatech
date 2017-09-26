@@ -11,6 +11,7 @@
     <title>{{ config('app.name', 'Mazzatech') }}</title>
 
     <!-- Styles -->
+    <link rel="icon" href="img/favicon.png" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
 </head>
@@ -29,16 +30,15 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Mazzatech') }}
+                    <a class="navbar-brand" href="">
+                        <img src="{{ asset('/img/logo-mazzatech.png')}}" width="150">
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        <li><a href="{{ route('index') }}">Home</a></li>
-                        <li><a href="{{ route('schedulings') }}">Agendamentos</a></li>
+                        <li><a href="{{ route('index') }}">Agendamentos</a></li>
                         <li><a href="{{ route('doctors') }}">Médicos</a></li>
                         <li><a href="{{ route('patients') }}">Pacientes</a></li>
                     </ul>

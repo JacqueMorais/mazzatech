@@ -2,9 +2,14 @@
 
 @section('content')
 <div class="row">
-    <div class="col-lg-12">
+	<div class="col-lg-1">
+		<img src="{{ asset('/img/agenda-mazzatech.png')}}" class="img-responsive">
+	</div>
+    <div class="col-lg-11">
         <h1 class="page-header">Agendamentos</h1>
     </div>
+</div>
+<div class="row">
 </div>
 
 <div class="col-sm-12">
