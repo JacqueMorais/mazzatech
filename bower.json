@@ -1,0 +1,20 @@
+{
+  "name": "mazzatech",
+  "description": "test full stack mazzatech",
+  "main": "",
+  "authors": [
+    "Jacqueline Morais"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/JacqueMorais/mazzatech",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}
